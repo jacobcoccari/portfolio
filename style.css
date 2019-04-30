@@ -31,8 +31,23 @@ th, td {
   vertical-align: top;
 }
 
+.project {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
 .information {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+}
+
+.information {
+
 }
 
 .image-medium {
@@ -54,11 +69,12 @@ th, td {
 */
 .card .projects:hover .image-medium {
   transition: .5s ease;
-  opacity: 0;
+  opacity: .1;
 }
 
 .card .projects:hover .information {
-  display: inline-block;
+  opacity: 1;
+  z-index: 1;
 }
 
 .container {

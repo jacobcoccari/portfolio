@@ -44,7 +44,51 @@
             <div class="information">
               <h2 style="margin-top: 10%;">HolyTrip</h2>
               <p>An all-in-one solution to manage the workflow of the planning of group vacations</p>
-              <a class="btn-red" style="display: inline-block;" href="http://www.lewagon.com/milan" target="_blank">See for yourself</a></p>
+              <a class="btn-red" id="myBtn" style="display: inline-block;" target="_blank">See for yourself</a></p>
+
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                                          <!-- Slideshow container -->
+                    <div class="slideshow-container">
+
+                      <!-- Full-width images with number and caption text -->
+                      <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="images/holytrip/dashboard.png" style="width:100%">
+                        <div class="text">CThis is where the magic happens</div>
+                      </div>
+
+                      <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="images/holytrip/editor.png" style="width:100%">
+                        <div class="text">Caption Two</div>
+                      </div>
+
+                      <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="images/holytrip/form.png" style="width:100%">
+                        <div class="text">Caption Three</div>
+                      </div>
+
+                      <!-- Next and previous buttons -->
+                      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <br>
+
+                    <!-- The dots/circles -->
+                    <div style="text-align:center">
+                      <span class="dot" onclick="currentSlide(1)"></span>
+                      <span class="dot" onclick="currentSlide(2)"></span>
+                      <span class="dot" onclick="currentSlide(3)"></span>
+                    </div>
+                </div>
+
+              </div>
             </div>
           </div>
            <img class="image-medium" src="images/holytrip/homepage.png" alt="The Matrix movie photo">
@@ -76,5 +120,59 @@
   </div>
 
 </body>
+<script>
+  // Get the modal
+var modal = document.getElementById('myModal');
 
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+    var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
 </html>

@@ -87,13 +87,6 @@ th, td {
   border-radius: 100px;
 }
 
-#logo:hover {
-  width: 210px;
-  height: 210px;
-  border-radius: 105px;
-  border: 1px solid red;
-}
-
 .card {
   background: white;
   padding: 10px;
@@ -283,4 +276,17 @@ th, td {
 
 .background {
   width: 100px;
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
+.links:hover {
+  color: #e81c4f;
+}
+
+.skills {
+  height: 70px;
+  width: 70px;
 }
